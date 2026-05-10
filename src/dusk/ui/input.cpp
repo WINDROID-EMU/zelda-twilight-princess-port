@@ -1,8 +1,11 @@
 #include "input.hpp"
 
 #include "ui.hpp"
+#include "dusk/virtual_controls.hpp"
+#include "menu_bar.hpp"
 
 #include <RmlUi/Core.h>
+#include <SDL3/SDL.h>
 #include <SDL3/SDL_gamepad.h>
 #include <SDL3/SDL_timer.h>
 #include <SDL3/SDL_touch.h>
@@ -687,9 +690,31 @@ void handle_event(const SDL_Event& event) noexcept {
         return;
     }
 
+    // Handle Android back button (AC_BACK) - Open main menu
+    if (event.type == SDL_EVENT_KEY_DOWN && event.key.key == SDLK_AC_BACK) {
+        // Find and open the MenuBar from document stack
+        auto& docs = get_document_stack();
+        for (auto& doc : docs) {
+            if (auto* menuBar = dynamic_cast<MenuBar*>(doc.get())) {
+                if (!menuBar->visible()) {
+                    menuBar->show();
+                }
+                break;
+            }
+        }
+        sync_input_block();
+        return;
+    }
+
     if (event.type == SDL_EVENT_FINGER_DOWN || event.type == SDL_EVENT_FINGER_MOTION ||
         event.type == SDL_EVENT_FINGER_UP || event.type == SDL_EVENT_FINGER_CANCELED)
     {
+        // Process virtual controls first
+        if (virtual_controls::handleTouchEvent(event.tfinger)) {
+            sync_input_block();
+            return;
+        }
+        // Fall through to menu tap handling
         if (handle_touch_menu_tap(*context, event)) {
             sync_input_block();
         }

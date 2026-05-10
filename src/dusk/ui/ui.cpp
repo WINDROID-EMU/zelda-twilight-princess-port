@@ -220,6 +220,7 @@ void update() noexcept {
     }
 
     input::update_input();
+    dusk::virtual_controls::update();
     const auto update_documents = [](auto& documents) {
         const std::size_t count = documents.size();
         for (std::size_t i = 0; i < count && i < documents.size(); ++i) {

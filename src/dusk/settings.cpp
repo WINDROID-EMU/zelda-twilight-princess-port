@@ -85,6 +85,12 @@ UserSettings g_userSettings = {
         .debugFlyCam {"game.debugFlyCam", false},
         .debugFlyCamLockEvents {"game.debugFlyCamLockEvents", true},
         .allowBackgroundInput {"game.allowBackgroundInput", true},
+        .enableVirtualControls {"game.enableVirtualControls", false},
+        .virtualControlsLayoutPreset {"game.virtualControlsLayoutPreset", 0},  // Dolphin (GameCube) layout
+        .virtualControlsOpacity {"game.virtualControlsOpacity", 0.7f},         // 70% opacity
+        .virtualControlsScale {"game.virtualControlsScale", 1.0f},             // 100% scale
+        .virtualControlsShowLabels {"game.virtualControlsShowLabels", true},   // Show labels
+        .virtualControlsCustomLayout {"game.virtualControlsCustomLayout", ""},  // Empty = no custom
 
         // Cheats
         .infiniteHearts {"game.infiniteHearts", false},
@@ -221,6 +227,12 @@ void registerSettings() {
     Register(g_userSettings.game.debugFlyCam);
     Register(g_userSettings.game.debugFlyCamLockEvents);
     Register(g_userSettings.game.allowBackgroundInput);
+    Register(g_userSettings.game.enableVirtualControls);
+    Register(g_userSettings.game.virtualControlsLayoutPreset);
+    Register(g_userSettings.game.virtualControlsOpacity);
+    Register(g_userSettings.game.virtualControlsScale);
+    Register(g_userSettings.game.virtualControlsShowLabels);
+    Register(g_userSettings.game.virtualControlsCustomLayout);
 
     Register(g_userSettings.backend.isoPath);
     Register(g_userSettings.backend.isoVerification);

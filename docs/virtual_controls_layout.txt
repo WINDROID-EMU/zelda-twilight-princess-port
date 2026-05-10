@@ -1,0 +1,187 @@
+================================================================================
+                    LAYOUT DOS CONTROLES VIRTUAIS - DUSK
+================================================================================
+
+TELA DO DISPOSITIVO MÓVEL (Portrait/Landscape)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  [L]                                              [R]                        │
+│  (Shoulder Left)                                  (Shoulder Right)           │
+│                                                                             │
+│                                                                             │
+│                    ┌─────┐                                                  │
+│                    │  Y  │     (Botão Y - Azul)                            │
+│                    └─────┘                                                  │
+│                                                                             │
+│                                                                             │
+│        ┌─────┐                    ┌─────┐     ┌─────┐                        │
+│        │  ↑  │                    │  X  │     │  A  │                        │
+│        └─────┘                    └─────┘     └─────┘                        │
+│   ┌────┐┌────┐┌────┐               (X - Azul)  (A - Vermelho)               │
+│   │ ←  ││  ↓ ││  → │                                                        │
+│   └────┘└────┘└────┘                    ┌─────┐                              │
+│   (D-Pad)                               │  B  │                              │
+│                                         └─────┘                              │
+│                                          (B - Verde)                         │
+│                                                                             │
+│                                                                             │
+│        ┌─────────────┐              ┌─────────────┐                        │
+│        │             │              │             │                        │
+│        │    [LS]     │              │    [RS]     │                        │
+│        │   (STICK)   │              │   (STICK)   │                        │
+│        │             │              │             │                        │
+│        └─────────────┘              └─────────────┘                        │
+│      (Left Stick/Analogico)        (Right Stick/C-Stick)                   │
+│                                                                             │
+│                    ┌─────┐                                                    │
+│                    │  Z  │     (Botão Z - Cinza)                            │
+│                    └─────┘                                                  │
+│                                                                             │
+│                    ┌─────┐                                                    │
+│                    │START│     (Botão Start - Cinza)                        │
+│                    └─────┘                                                  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+                           POSICIONAMENTO NA TELA
+================================================================================
+
+LANDSCAPE MODE (Paisagem) - Recomendado para jogos
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │                                                                        │
+   │  [L]                              [Z]      [START]               [R]   │
+   │                                                                         │
+   │        ┌─────┐                                                  ┌─────┐ │
+   │        │  ↑  │                                            ┌─────┐ │  Y  │ │
+   │   ┌────┐┌────┐┌────┐                                     │  X  │ └─────┘ │
+   │   │ ←  ││  ↓ ││  → │                                     └─────┘ ┌─────┐ │
+   │   └────┘└────┘└────┘                                             │  A  │ │
+   │                                                                   └─────┘ │
+   │        ┌─────────────┐                                  ┌─────┐ ┌─────┐   │
+   │        │             │                                  │  B  │ │     │   │
+   │        │   [STICK]   │                                  └─────┘ │STICK│   │
+   │        │   LEFT      │                                         │RIGHT│   │
+   │        │             │                                         │     │   │
+   │        └─────────────┘                                         └─────┘   │
+   │                                                                        │
+   │                                                                        │
+   └────────────────────────────────────────────────────────────────────────┘
+
+        Margem Esquerda: 20px              Margem Direita: 20px
+        Margem Superior: 50px              Margem Inferior: 50px
+
+
+================================================================================
+                           CORES DOS BOTÕES
+================================================================================
+
+Botão    │ Cor          │ Hex       │ SDL Mapping
+─────────┼──────────────┼───────────┼─────────────────────────────
+A        │ Vermelho     │ #FF6464   │ SDL_GAMEPAD_BUTTON_SOUTH
+B        │ Verde        │ #64FF64   │ SDL_GAMEPAD_BUTTON_EAST
+X        │ Azul         │ #6464FF   │ SDL_GAMEPAD_BUTTON_WEST
+Y        │ Amarelo      │ #FFFF64   │ SDL_GAMEPAD_BUTTON_NORTH
+L        │ Cinza Claro  │ #C8C8C8   │ SDL_GAMEPAD_BUTTON_LEFT_SHOULDER
+R        │ Cinza Claro  │ #C8C8C8   │ SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER
+Z        │ Cinza        │ #969696   │ SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER
+Start    │ Cinza        │ #969696   │ SDL_GAMEPAD_BUTTON_START
+D-Pad    │ Branco       │ #FFFFFF   │ SDL_GAMEPAD_BUTTON_DPAD_*
+Sticks   │ Cinza Claro  │ #C8C8C8   │ SDL_GAMEPAD_AXIS_*
+
+
+================================================================================
+                        DIMENSÕES DOS ELEMENTOS
+================================================================================
+
+Elemento          │ Tamanho    │ Descrição
+──────────────────┼────────────┼────────────────────────────────────
+Botões de Ação    │ 60x60 px   │ A, B, X, Y
+Botões D-Pad      │ 60x60 px   │ ↑, ↓, ←, →
+Botões Shoulder   │ 120x60 px  │ L, R
+Botões Start/Z    │ 60x60 px   │ Start, Z
+Base do Joystick  │ 120x120 px │ Área de movimento
+Stick do Joystick │ 60x60 px   │ Stick móvel
+Espaçamento       │ 10 px      │ Entre botões
+Margem da Tela    │ 20 px      │ Das bordas
+
+
+================================================================================
+                    COMPORTAMENTO DOS JOYSTICKS VIRTUAIS
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│    TOQUE INICIAL                    ARRASTAR                      SOLTA    │
+│                                                                             │
+│    ┌─────────────┐              ┌─────────────┐              ┌───────────┐ │
+│    │             │              │      ●      │              │           │ │
+│    │    ┌───┐    │    →→→      │    /   \    │    →→→       │    ┌───┐  │ │
+│    │    │ ● │    │              │   ●     ●   │              │    │ ● │  │ │
+│    │    └───┘    │              │    \   /    │              │    └───┘  │ │
+│    │             │              │      ●      │              │           │ │
+│    └─────────────┘              └─────────────┘              └───────────┘ │
+│                                                                             │
+│    Stick no                     Stick segue                 Stick volta   │
+│    centro                       o dedo                      ao centro       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+DEADZONE: 10% (0.1) - Movimentos menores que 10% do raio são ignorados
+
+
+================================================================================
+                         MAPEAMENTO DE BOTÕES
+================================================================================
+
+Controle Virtual    │ SDL Gamepad Button         │ PAD Button
+────────────────────┼────────────────────────────┼────────────────────
+A                   │ SDL_GAMEPAD_BUTTON_SOUTH   │ PAD_BUTTON_A
+B                   │ SDL_GAMEPAD_BUTTON_EAST    │ PAD_BUTTON_B
+X                   │ SDL_GAMEPAD_BUTTON_WEST    │ PAD_BUTTON_X
+Y                   │ SDL_GAMEPAD_BUTTON_NORTH   │ PAD_BUTTON_Y
+L                   │ SDL_GAMEPAD_BUTTON_LEFT_SHOULDER  │ PAD_TRIGGER_L
+R                   │ SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER │ PAD_TRIGGER_R
+Z                   │ SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER │ PAD_TRIGGER_Z
+Start               │ SDL_GAMEPAD_BUTTON_START   │ PAD_BUTTON_START
+D-Pad ↑             │ SDL_GAMEPAD_BUTTON_DPAD_UP    │ PAD_BUTTON_UP
+D-Pad ↓             │ SDL_GAMEPAD_BUTTON_DPAD_DOWN  │ PAD_BUTTON_DOWN
+D-Pad ←             │ SDL_GAMEPAD_BUTTON_DPAD_LEFT  │ PAD_BUTTON_LEFT
+D-Pad →             │ SDL_GAMEPAD_BUTTON_DPAD_RIGHT │ PAD_BUTTON_RIGHT
+Left Stick X        │ SDL_GAMEPAD_AXIS_LEFTX        │ PAD_AXIS_LEFT_X
+Left Stick Y        │ SDL_GAMEPAD_AXIS_LEFTY        │ PAD_AXIS_LEFT_Y
+Right Stick X       │ SDL_GAMEPAD_AXIS_RIGHTX       │ PAD_AXIS_RIGHT_X
+Right Stick Y       │ SDL_GAMEPAD_AXIS_RIGHTY       │ PAD_AXIS_RIGHT_Y
+
+
+================================================================================
+                              EXEMPLO DE USO
+================================================================================
+
+1. O usuário ativa "Virtual Controls" em Settings > Input
+2. Ao tocar na tela, os controles virtuais aparecem
+3. Toque no botão A → Evento SDL_EVENT_GAMEPAD_BUTTON_DOWN é injetado
+4. Toque no joystick esquerdo e arraste → Eventos SDL_EVENT_GAMEPAD_AXIS_MOTION
+5. O jogo processa esses eventos como se fossem de um controle físico
+
+
+================================================================================
+                              ARQUIVOS RELACIONADOS
+================================================================================
+
+• include/dusk/virtual_controls.hpp    - Header com estruturas de dados
+• src/dusk/virtual_controls.cpp       - Implementação completa
+• src/dusk/ui/input.cpp               - Processamento de touch events
+• src/dusk/ui/ui.cpp                   - Atualização no loop principal
+• src/m_Do/m_Do_graphic.cpp           - Renderização via ImGui
+• src/dusk/ui/settings.cpp             - Opção de ativação na UI
+• src/dusk/ui/overlay.cpp              - Reconhecimento de input válido
+
+
+================================================================================
+                              FIM DO DOCUMENTO
+================================================================================

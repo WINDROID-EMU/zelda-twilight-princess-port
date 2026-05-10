@@ -2,6 +2,7 @@
 
 #include "aurora/lib/logging.hpp"
 #include "dusk/achievements.h"
+#include "dusk/virtual_controls.hpp"
 #include "magic_enum.hpp"
 #include "window.hpp"
 
@@ -99,7 +100,7 @@ Rml::Element* create_controller_warning(Rml::Element* parent) {
 
     auto* message = append(elem, "message");
     auto* content = append(message, "span");
-    content->SetInnerRML("Configure controller port 1 in Settings.");
+    content->SetInnerRML("Configure controller port 1 in Settings or enable Virtual Controls in Input settings.");
 
     return elem;
 }
@@ -270,6 +271,7 @@ void Overlay::update() {
 
     const bool showControllerWarning = PADGetIndexForPort(PAD_CHAN0) < 0 &&
                                        PADGetKeyButtonBindings(PAD_CHAN0, nullptr) == nullptr &&
+                                       !dusk::virtual_controls::getState().enabled &&
                                        dynamic_cast<Window*>(top_document()) == nullptr &&
                                        dynamic_cast<WindowSmall*>(top_document()) == nullptr;
     if (showControllerWarning && mControllerWarning == nullptr) {

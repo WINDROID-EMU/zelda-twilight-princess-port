@@ -10,6 +10,7 @@
 #include "dusk/imgui/ImGuiEngine.hpp"
 #include "dusk/livesplit.h"
 #include "dusk/main.h"
+#include "dusk/virtual_controls.hpp"
 #include "graphics_tuner.hpp"
 #include "m_Do/m_Do_main.h"
 #include "menu_bar.hpp"
@@ -628,6 +629,79 @@ SettingsWindow::SettingsWindow(bool prelaunch) : mPrelaunch(prelaunch) {
                 .helpText = "Allow controller input even when the game window is not focused.",
                 .onChange = [](bool value) { aurora_set_background_input(value); },
             });
+        addOption("Virtual Controls", getSettings().game.enableVirtualControls,
+            "Enables on-screen virtual controls for touch input. Useful for mobile devices.");
+        
+        // Virtual Controls Layout Configuration
+        constexpr std::array kLayoutPresetNames = {
+            "Dolphin (GameCube)",
+            "Xbox",
+            "PlayStation",
+            "Mobile",
+            "Custom"
+        };
+        
+        leftPane.register_control(
+            leftPane.add_select_button({
+                .key = "Virtual Controls Layout",
+                .getValue =
+                    [] {
+                        const int preset = getSettings().game.virtualControlsLayoutPreset.getValue();
+                        if (preset >= 0 && preset < static_cast<int>(kLayoutPresetNames.size())) {
+                            return Rml::String{kLayoutPresetNames[preset]};
+                        }
+                        return Rml::String{"Unknown"};
+                    },
+                .isModified =
+                    [] {
+                        return getSettings().game.virtualControlsLayoutPreset.getValue() !=
+                               getSettings().game.virtualControlsLayoutPreset.getDefaultValue();
+                    },
+            }),
+            rightPane, [](Pane& pane) {
+                pane.clear();
+                pane.add_text("Choose a layout preset for virtual controls:");
+                pane.add_rml("<br/>");
+                for (size_t i = 0; i < kLayoutPresetNames.size(); i++) {
+                    pane
+                        .add_button({
+                            .text = Rml::String{kLayoutPresetNames[i]},
+                            .isSelected =
+                                [i] {
+                                    return getSettings().game.virtualControlsLayoutPreset.getValue() == static_cast<int>(i);
+                                },
+                        })
+                        .on_pressed([i] {
+                            mDoAud_seStartMenu(kSoundItemChange);
+                            getSettings().game.virtualControlsLayoutPreset.setValue(static_cast<int>(i));
+                            // Apply the layout preset
+                            using namespace dusk::virtual_controls;
+                            setLayoutPreset(static_cast<LayoutPreset>(i));
+                            config::Save();
+                        });
+                }
+                pane.add_rml("<br/>");
+                pane.add_text("<b>Dolphin (GameCube)</b> - Official GameCube controller layout<br/>");
+                pane.add_text("<b>Xbox</b> - Xbox controller style layout<br/>");
+                pane.add_text("<b>PlayStation</b> - PlayStation controller layout<br/>");
+                pane.add_text("<b>Mobile</b> - Optimized for touch screens<br/>");
+                pane.add_text("<b>Custom</b> - User-defined layout");
+            });
+        
+        // Opacity slider
+        config_percent_select(leftPane, rightPane, getSettings().game.virtualControlsOpacity,
+            "Controls Opacity", "Adjust the transparency of virtual controls.", 20, 100, 5,
+            [] { return !getSettings().game.enableVirtualControls; });
+        
+        // Scale slider
+        config_percent_select(leftPane, rightPane, getSettings().game.virtualControlsScale,
+            "Controls Scale", "Adjust the size of virtual controls.", 50, 200, 10,
+            [] { return !getSettings().game.enableVirtualControls; });
+        
+        // Show labels toggle
+        addOption("Show Button Labels", getSettings().game.virtualControlsShowLabels,
+            "Display button labels (A, B, X, Y, etc.) on virtual controls.",
+            [] { return !getSettings().game.enableVirtualControls; });
 
         leftPane.add_section("Camera");
         addOption("Free Camera", getSettings().game.freeCamera,

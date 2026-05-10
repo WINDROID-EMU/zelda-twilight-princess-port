@@ -57,6 +57,7 @@
 #include "dusk/imgui/ImGuiConsole.hpp"
 #include "dusk/logging.h"
 #include "dusk/settings.h"
+#include "dusk/virtual_controls.hpp"
 #endif
 
 class mDoGph_HIO_c : public JORReflexible {
@@ -2718,6 +2719,11 @@ int mDoGph_Painter() {
 
 #if TARGET_PC
     dusk::g_imguiConsole.PostDraw();
+    
+    // Render virtual controls
+    int width, height;
+    SDL_GetWindowSize(aurora::window::get_sdl_window(), &width, &height);
+    dusk::virtual_controls::renderImGui(width, height);
 #endif
 
     mDoGph_gInf_c::endRender();

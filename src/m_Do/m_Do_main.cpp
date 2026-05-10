@@ -18,6 +18,7 @@
 #include "JSystem/JUtility/JUTConsole.h"
 #include "JSystem/JUtility/JUTException.h"
 #include "JSystem/JUtility/JUTProcBar.h"
+#include "dusk/virtual_controls.hpp"
 #include "JSystem/JUtility/JUTReport.h"
 #include "SSystem/SComponent/c_counter.h"
 #include "SSystem/SComponent/c_API_graphic.h"
@@ -721,6 +722,9 @@ int game_main(int argc, char* argv[]) {
         config.allowTextureDumps = false;
         auroraInfo = aurora_initialize(argc, argv, &config);
     }
+
+    // Initialize virtual controls
+    dusk::virtual_controls::init();
 
 #ifdef DUSK_DISCORD
     dusk::discord::initialize();

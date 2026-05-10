@@ -1,0 +1,352 @@
+================================================================================
+        LAYOUT DOS CONTROLES VIRTUAIS - ESTILO DOLPHIN EMULATOR/GAMECUBE
+================================================================================
+
+TELA DO DISPOSITIVO (Landscape/Paisagem) - Layout Oficial GameCube
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│   ┌───────────┐                                     ┌───────────┐          │
+│   │     L     │                                     │     R     │          │
+│   │  (ombro)  │                                     │  (ombro)  │          │
+│   └───────────┘                                     └───────────┘          │
+│                                                                             │
+│                                                                             │
+│        ┌─────────────┐                              ┌─────┐                │
+│        │             │                              │  Y  │                │
+│        │   ┌───┐     │                        ┌─────┼─────┼─────┐          │
+│        │   │ ● │     │                        │  X  │     │  A  │          │
+│        │   └───┘     │                        └─────┼─────┼─────┘          │
+│        │             │                              │  B  │                │
+│        │  [CONTROL]  │                              └─────┘                │
+│        │   [STICK]   │                                                     │
+│        │             │                              ┌─────────────┐       │
+│        └─────────────┘                              │   ┌───┐     │       │
+│                                                     │   │ ● │     │       │
+│              ↑                                      │   └───┘     │       │
+│         ←    ↓    →                                 │  [C-STICK]  │       │
+│                                                     └─────────────┘       │
+│        (D-PAD)                                                            │
+│                                                                             │
+│                                                                             │
+│                           ┌───────────┐                                    │
+│                           │   START   │                                    │
+│                           └───────────┘                                    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+                         DETALHAMENTO DOS BOTÕES
+================================================================================
+
+LADO ESQUERDO (Input Principal)
+─────────────────────────────────────────────────────────────────────────────
+
+┌─────────────┐
+│             │
+│   ┌───┐     │     ← Control Stick (Analogico Principal)
+│   │ ● │     │         - Movimento do personagem
+│   └───┘     │         - Navegação nos menus
+│             │
+│  [CONTROL]  │
+│   [STICK]   │
+└─────────────┘
+      │
+      │
+      ↓
+   ┌───────┐
+   │   ↑   │
+   │ ← ↓ → │        ← D-Pad (Direcional Digital)
+   └───────┘          - Itens secundarios
+                      - Selecao em menus
+
+
+LADO DIREITO (Acoes)
+─────────────────────────────────────────────────────────────────────────────
+
+      ┌─────┐
+      │  Y  │        ← Y Button (Amarelo)
+      └─────┘           - Acao secundaria
+                        - Camera/Visao
+        │
+┌───────┼───────┐
+│       │       │
+│  X    │    A  │    ← X (Azul)     → A (Verde - Principal)
+│       │       │       - Acao 3      - Acao principal
+└───────┼───────┘       - Especial    - Confirmar
+        │
+      ┌─────┐
+      │  B  │        ← B Button (Vermelho)
+      └─────┘           - Cancelar/Voltar
+                        - Acao alternativa
+        │
+        ↓
+   ┌─────────────┐
+   │   ┌───┐     │
+   │   │ ● │     │    ← C-Stick (Camera/Visao)
+   │   └───┘     │        - Controlar camera
+   │  [C-STICK]  │        - Visao em primeira pessoa
+   └─────────────┘
+
+
+BOTÕES DE OMBRO
+─────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────┐    ┌─────────────────┐
+│        L        │    │        R        │
+│   ┌─────────┐   │    │   ┌─────────┐   │
+│   │ TRIGGER │   │    │   │ TRIGGER │   │
+│   └─────────┘   │    │   └─────────┘   │
+│    (Analogico)  │    │    (Analogico)  │
+└─────────────────┘    └─────────────────┘
+
+L - Trigger Esquerdo      R - Trigger Direito
+    - Defesa/Escudo           - Acao secundaria
+    - Mira com escudo         - Acao de ataque
+
+
+BOTÕES ADICIONAIS
+─────────────────────────────────────────────────────────────────────────────
+
+┌─────────────┐
+│      Z      │        ← Z Button (Ombro Direito Superior)
+└─────────────┘            - Acao especial
+                           - Alternar alvo
+                           - Mira
+
+┌─────────────┐
+│   START     │        ← Start Button
+└─────────────┘            - Menu de pause
+                           - Confirmar (menus)
+
+
+================================================================================
+                    COMPARACAO: DOLPHIN vs GAMECUBE REAL
+================================================================================
+
+GameCube Controller Real:
+┌─────────────────────────────────────────────────────────────────┐
+│  L     Z                                                        │
+│                                                                 │
+│     ┌───┐                                              ┌───┐    │
+│    /     \                                            /  Y \   │
+│   │ STICK │                                          X     A  │
+│    \     /                                            \  B /   │
+│     └───┘                                              └───┘    │
+│                                                                 │
+│       D-PAD                                    C-STICK          │
+│                                                 ┌───┐          │
+│                                                /     \         │
+│                                               │ STICK │        │
+│                                                \     /         │
+│                                                 └───┘          │
+│                                                                 │
+│                          START                                  │
+│                                                                 │
+│  R (Analogico)                                                  │
+└─────────────────────────────────────────────────────────────────┘
+
+
+Nosso Layout Virtual (Otimizado para Touch):
+┌─────────────────────────────────────────────────────────────────┐
+│  ┌─────┐                                          ┌─────┐      │
+│  │  L  │                                          │  R  │      │
+│  └─────┘                                          └─────┘      │
+│                                                                 │
+│  ┌──────────┐                                      ┌─────┐     │
+│  │   ┌──┐   │                                     /  Y  \    │
+│  │   │● │   │                                    ┌───┼───┐    │
+│  │   └──┘   │                                    │ X │ A │    │
+│  │ CONTROL  │                                    └───┼───┘    │
+│  │  STICK   │                                       B        │
+│  └──────────┘                                      ┌─────┐     │
+│                                                  /  Z  \    │
+│  ┌────────┐                                      └─────┘     │
+│  │ ↑ ↓ ← →│                                      ┌────────┐   │
+│  │ D-PAD  │                                      │ ┌──┐   │   │
+│  └────────┘                                      │ │● │   │   │
+│                                                  │ └──┘   │   │
+│                                                  │C-STICK │   │
+│                                                  └────────┘   │
+│                                                                 │
+│                         ┌───────┐                              │
+│                         │ START │                              │
+│                         └───────┘                              │
+└─────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+                         CORES OFICIAIS GAMECUBE
+================================================================================
+
+Botão    │ Cor Oficial     │ RGB Hex    │ Descricao
+─────────┼─────────────────┼────────────┼──────────────────────────────
+A        │ Verde           │ #00FF00    │ Botao principal (maior)
+B        │ Vermelho        │ #FF0000    │ Botao de cancelar
+X        │ Azul            │ #0000FF    │ Botao de acao 3
+Y        │ Amarelo         │ #FFFF00    │ Botao de acao secundaria
+L        │ Cinza Claro     │ #CCCCCC    │ Trigger esquerdo
+R        │ Cinza Claro     │ #CCCCCC    │ Trigger direito
+Z        │ Cinza Escuro    │ #666666    │ Botao Z (ombro)
+Start    │ Cinza           │ #888888    │ Botao central
+Control  │ Cinza/Branco    │ #EEEEEE    │ Stick analogico
+C-Stick  │ Amarelo/Claro   │ #DDDD88    │ Stick direito (C-Stick)
+D-Pad    │ Cinza           │ #AAAAAA    │ Direcional digital
+
+
+================================================================================
+                    MAPEAMENTO DE CONTROLES VIRTUAIS
+================================================================================
+
+Controle Virtual → SDL Gamepad → PAD (GameCube)
+─────────────────────────────────────────────────────────────────────────────
+
+Control Stick:
+   X+ (Direita)    → SDL_GAMEPAD_AXIS_LEFTX  → PAD_AXIS_LEFT_X_POS
+   X- (Esquerda)   → SDL_GAMEPAD_AXIS_LEFTX  → PAD_AXIS_LEFT_X_NEG
+   Y+ (Cima)       → SDL_GAMEPAD_AXIS_LEFTY  → PAD_AXIS_LEFT_Y_POS
+   Y- (Baixo)      → SDL_GAMEPAD_AXIS_LEFTY  → PAD_AXIS_LEFT_Y_NEG
+
+C-Stick:
+   X+ (Direita)    → SDL_GAMEPAD_AXIS_RIGHTX → PAD_AXIS_RIGHT_X_POS
+   X- (Esquerda)   → SDL_GAMEPAD_AXIS_RIGHTX → PAD_AXIS_RIGHT_X_NEG
+   Y+ (Cima)       → SDL_GAMEPAD_AXIS_RIGHTY → PAD_AXIS_RIGHT_Y_POS
+   Y- (Baixo)      → SDL_GAMEPAD_AXIS_RIGHTY → PAD_AXIS_RIGHT_Y_NEG
+
+Botões de Acao:
+   A               → SDL_GAMEPAD_BUTTON_SOUTH    → PAD_BUTTON_A
+   B               → SDL_GAMEPAD_BUTTON_EAST     → PAD_BUTTON_B
+   X               → SDL_GAMEPAD_BUTTON_WEST     → PAD_BUTTON_X
+   Y               → SDL_GAMEPAD_BUTTON_NORTH    → PAD_BUTTON_Y
+
+Ombros:
+   L               → SDL_GAMEPAD_BUTTON_LEFT_SHOULDER  → PAD_TRIGGER_L
+   R               → SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER → PAD_TRIGGER_R
+   Z               → SDL_GAMEPAD_AXIS_LEFT_TRIGGER     → PAD_TRIGGER_Z
+
+D-Pad:
+   ↑               → SDL_GAMEPAD_BUTTON_DPAD_UP     → PAD_BUTTON_UP
+   ↓               → SDL_GAMEPAD_BUTTON_DPAD_DOWN   → PAD_BUTTON_DOWN
+   ←               → SDL_GAMEPAD_BUTTON_DPAD_LEFT   → PAD_BUTTON_LEFT
+   →               → SDL_GAMEPAD_BUTTON_DPAD_RIGHT  → PAD_BUTTON_RIGHT
+
+Sistema:
+   START           → SDL_GAMEPAD_BUTTON_START       → PAD_BUTTON_START
+
+
+================================================================================
+                         DIMENSOES DOS ELEMENTOS
+================================================================================
+
+Elemento              │ Largura │ Altura │ Descricao
+──────────────────────┼─────────┼────────┼────────────────────────────────
+Botao A (Principal)   │ 72 px   │ 72 px  │ Maior botao, centro direita
+Botao B               │ 60 px   │ 60 px  │ Abaixo/esquerda do A
+Botao X               │ 60 px   │ 60 px  │ Esquerda do A
+Botao Y               │ 60 px   │ 60 px  │ Acima do A
+Botao Z               │ 90 px   │ 48 px  │ Acima/direita dos botoes
+Botao L               │ 180 px  │ 72 px  │ Grande, topo esquerdo
+Botao R               │ 180 px  │ 72 px  │ Grande, topo direito
+Botao START           │ 60 px   │ 60 px  │ Centro inferior
+D-Pad                 │ 60 px   │ 60 px  │ Cada direcao
+Control Stick Base    │ 120 px  │ 120 px │ Area do stick esquerdo
+Control Stick         │ 60 px   │ 60 px  │ Parte movel
+C-Stick Base          │ 120 px  │ 120 px │ Area do stick direito
+C-Stick               │ 60 px   │ 60 px  │ Parte movel
+
+
+================================================================================
+                    COMPORTAMENTO DOS ANALOGICOS
+================================================================================
+
+Control Stick (Esquerdo):
+─────────────────────────────────────────────────────────────────────────────
+- Usado para movimento do personagem
+- TOQUE: O stick aparece sob o dedo
+- ARRASTAR: Move o personagem na direcao do arrasto
+- DEADZONE: 10% (movimentos muito pequenos sao ignorados)
+
+
+C-Stick (Direito):
+─────────────────────────────────────────────────────────────────────────────
+- Usado para camera e visao
+- TOQUE: O stick aparece sob o dedo
+- ARRASTAR: Controla a camera na direcao do arrasto
+- C-UP: Visao em primeira pessoa
+- C-DOWN: Resetar camera
+- C-LEFT/RIGHT: Rotacionar camera
+
+
+================================================================================
+                         GESTOS DE TOQUE
+================================================================================
+
+1. TOQUE SIMPLES em botao:
+   → Pressiona o botao imediatamente
+   → Solta quando o dedo sai do botao
+
+2. TOQUE E ARRASTE no Control Stick:
+   → Centro do stick aparece sob o dedo
+   → Arrastar move o stick dentro da base
+   → Direcao determina movimento do personagem
+   → Solta: stick volta ao centro
+
+3. TOQUE E ARRASTE no C-Stick:
+   → Similar ao Control Stick
+   → Controla a camera ao inves do movimento
+
+4. TOQUE em L/R:
+   → Trigger analogico
+   → Pressao pode variar (dependendo da implementacao)
+
+
+================================================================================
+                    COMPARACAO COM OUTROS LAYOUTS
+================================================================================
+
+Layout Anterior (Padrao Mobile):
+┌────────────────────────────────────────┐
+│  D-PAD (esquerda)   Botoes (direita)   │
+│  ┌───┐             A B X Y            │
+│  │ ↑ │                                │
+│  │←↓→│             Sticks separados    │
+│  └───┘                                │
+│                                       │
+│  Joystick Esq      Joystick Dir      │
+└────────────────────────────────────────┘
+
+
+Layout Dolphin/GameCube (Atual):
+┌────────────────────────────────────────┐
+│                                       │
+│  [L]                    [R]          │
+│                                       │
+│  Control Stick      Botões em         │
+│  ┌─────────┐        forma de          │
+│  │   ●     │        diamante:         │
+│  └─────────┘           Y              │
+│                       X A             │
+│  D-Pad abaixo          B              │
+│  ┌───┐                                │
+│  │↑↓←→│           C-Stick abaixo      │
+│  └───┘           ┌─────────┐          │
+│                  │   ●     │          │
+│                  └─────────┘          │
+│              [START]                   │
+└────────────────────────────────────────┘
+
+
+VANTAGENS DO LAYOUT DOLPHIN:
+✓ Mais familiar para jogadores de GameCube
+✓ Botao A maior (mais importante)
+✓ Layout de diamante para acoes
+✓ C-Stick na posicao correta
+✓ D-Pad abaixo do Control Stick
+✓ L/R maiores e mais faceis de acertar
+
+
+================================================================================
+                              FIM DO DOCUMENTO
+================================================================================

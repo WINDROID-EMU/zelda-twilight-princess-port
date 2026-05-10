@@ -148,6 +148,12 @@ struct UserSettings {
         ConfigVar<bool> debugFlyCam;
         ConfigVar<bool> debugFlyCamLockEvents;
         ConfigVar<bool> allowBackgroundInput;
+        ConfigVar<bool> enableVirtualControls;
+        ConfigVar<int> virtualControlsLayoutPreset;  // 0=Dolphin, 1=Xbox, 2=PS, 3=Mobile, 4=Custom
+        ConfigVar<float> virtualControlsOpacity;     // 0.0-1.0
+        ConfigVar<float> virtualControlsScale;       // 0.5-2.0
+        ConfigVar<bool> virtualControlsShowLabels;   // Show button labels
+        ConfigVar<std::string> virtualControlsCustomLayout;  // JSON config for custom layout
 
         // Cheats
         ConfigVar<bool> infiniteHearts;
