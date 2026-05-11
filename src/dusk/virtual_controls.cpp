@@ -70,7 +70,7 @@ void shutdown() {
     }
 }
 
-void updateLayout(int screenWidth, int screenHeight) {
+void applyDolphinLayout(int screenWidth, int screenHeight) {
     // Dolphin Emulator / GameCube Controller Layout
     const float margin = 20.0f;
     const float bottomMargin = 40.0f;
@@ -161,6 +161,10 @@ void updateLayout(int screenWidth, int screenHeight) {
         {screenWidth / 2.0f - BUTTON_SIZE / 2.0f, 
          screenHeight - BUTTON_SIZE - bottomMargin, 
          BUTTON_SIZE, BUTTON_SIZE};
+}
+
+void updateLayout(int screenWidth, int screenHeight) {
+    applyDolphinLayout(screenWidth, screenHeight);
 }
 
 void injectSDLEvent(SDL_Event& event) {

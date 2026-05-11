@@ -1519,6 +1519,8 @@ set(DUSK_FILES
         src/dusk/discord.hpp
         src/dusk/discord_presence.cpp
         src/dusk/version.cpp
+        src/dusk/virtual_controls.cpp
+        include/dusk/virtual_controls.hpp
 )
 
 set(DUSK_HTTP_BACKEND_FILES

@@ -12,6 +12,7 @@
 
 #include "aurora/lib/window.hpp"
 #include "dusk/io.hpp"
+#include "dusk/virtual_controls.hpp"
 #include "input.hpp"
 #include "prelaunch.hpp"
 #include "window.hpp"

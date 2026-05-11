@@ -645,7 +645,7 @@ SettingsWindow::SettingsWindow(bool prelaunch) : mPrelaunch(prelaunch) {
             leftPane.add_select_button({
                 .key = "Virtual Controls Layout",
                 .getValue =
-                    [] {
+                    [&] {
                         const int preset = getSettings().game.virtualControlsLayoutPreset.getValue();
                         if (preset >= 0 && preset < static_cast<int>(kLayoutPresetNames.size())) {
                             return Rml::String{kLayoutPresetNames[preset]};
@@ -658,7 +658,7 @@ SettingsWindow::SettingsWindow(bool prelaunch) : mPrelaunch(prelaunch) {
                                getSettings().game.virtualControlsLayoutPreset.getDefaultValue();
                     },
             }),
-            rightPane, [](Pane& pane) {
+            rightPane, [&](Pane& pane) {
                 pane.clear();
                 pane.add_text("Choose a layout preset for virtual controls:");
                 pane.add_rml("<br/>");
@@ -667,7 +667,7 @@ SettingsWindow::SettingsWindow(bool prelaunch) : mPrelaunch(prelaunch) {
                         .add_button({
                             .text = Rml::String{kLayoutPresetNames[i]},
                             .isSelected =
-                                [i] {
+                                [&kLayoutPresetNames, i] {
                                     return getSettings().game.virtualControlsLayoutPreset.getValue() == static_cast<int>(i);
                                 },
                         })
